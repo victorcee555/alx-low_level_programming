@@ -2,8 +2,11 @@
 #include <stdio.h>
 #include <string.h>
 
+int is_palindrome(char *s);
+int check_palindrome(char *s, int left, int right);
+
 /**
- * int is_palindrome - checks if number is palindrome.
+ * is_palindrome - checks if number is palindrome.
  * @s: string.
  *
  * Return: 1 if palindrome.
@@ -13,15 +16,24 @@
 int is_palindrome(char *s)
 {
 	int len = strlen(s);
+	return (check_palindrome(s, 0, len - 1));
+}
 
-	if (len <= 1)
-	{
+/**
+ * check_palindrome - checks if a number is palindrome.
+ * @s: string to check.
+ * @right: integer.
+ * @left: integer.
+ *
+ * Return: 0 if not palindrome.
+ *         1 if palindrome.
+ */
+
+int check_palindrome(char *s, int left, int right)
+{
+	if (left >= right)
 		return (1);
-	}
-	if (*s != s[len - 1])
-	{
-		return (0);
-	}
-	s[len - 1] = '\0';
-	return (is_palindrome(s + 1));
+	else if (s[left] == s[right])
+		return (check_palindrome(s, left + 1, right - 1));
+	else return(0);
 }
