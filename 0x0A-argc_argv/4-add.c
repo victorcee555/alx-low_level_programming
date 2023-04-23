@@ -10,28 +10,37 @@
  * Return: (0) on success, 1 otherwise.
  */
 
+
 int main(int argc, char **argv)
 {
-	int i = 0, sum = 0;
+    int i, sum = 0;
 
-	if (argc > 1)
-	{
-		for (i = 1; i < argc; i++)
-		{
-			if (atoi(argv[i]) == 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
-			else
-				sum = sum + atoi(argv[i]);
-		}
-		printf("%d\n", sum);
-	}
+    if (argc > 1)
+    {
+        for (i = 1; i < argc; i++)
+        {
+            char *ptr = argv[i];
 
-	else
-		printf("%d\n", 0);
+            while (*ptr != '\0')
+            {
+                if (!isdigit(*ptr))
+                {
+                    printf("Error\n");
+                    return 1;
+                }
+                ptr++;
+            }
 
-	return (0);
+            sum += atoi(argv[i]);
+        }
 
+        printf("%d\n", sum);
+    }
+    else
+    {
+        printf("%d\n", 0);
+    }
+
+    return 0;
 }
+
