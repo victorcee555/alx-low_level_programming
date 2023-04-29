@@ -14,6 +14,9 @@
 char *str_concat(char *s1, char *s2)
 {
 	size_t len;
+	char *s;
+
+	s = strcpy(s1);
 
 	if (s2 == NULL)
 		return (NULL);
@@ -25,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 	if (s1 == NULL)
 		return (NULL);
 
-	strcat(s1, s2);
+	strcat(s, s2);
 
 	return (s1);
 }
