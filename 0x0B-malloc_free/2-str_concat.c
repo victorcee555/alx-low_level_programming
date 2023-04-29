@@ -16,20 +16,18 @@ char *str_concat(char *s1, char *s2)
 	size_t len;
 	char *s;
 
-	s = "test";
-	strcpy(s, s1);
-
-	if (s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 
 	len = strlen(s2) + strlen(s1) + 1;
 
-	s1 = malloc(sizeof(char) * len);
+	s = malloc(sizeof(char) * len);
 
-	if (s1 == NULL)
+	if (s == NULL)
 		return (NULL);
 
-	strcat(s, s2);
+	s = strcat(s, s1);
+	s = strcat(s, s2);
 
 	return (s1);
 }
