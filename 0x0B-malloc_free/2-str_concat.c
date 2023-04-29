@@ -19,7 +19,7 @@ char *str_concat(char *s1, char *s2)
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
-		s1 = "";
+		s2 = "";
 	
 	len = strlen(s2) + strlen(s1) + 1;
 
@@ -28,8 +28,8 @@ char *str_concat(char *s1, char *s2)
 	if (s == NULL)
 		return (NULL);
 
-	s = strcat(s, s1);
-	s = strcat(s, s2);
+	strcat(s, s1);
+	strcat(s, s2);
 
 	return (s);
 }
