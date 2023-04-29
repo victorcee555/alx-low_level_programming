@@ -16,7 +16,7 @@ char *str_concat(char *s1, char *s2)
 	size_t len;
 	char *s;
 
-	s = strcpy(s1);
+	strcpy(s, s1);
 
 	if (s2 == NULL)
 		return (NULL);
