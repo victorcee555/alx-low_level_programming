@@ -29,5 +29,5 @@ char *str_concat(char *s1, char *s2)
 	s = strcat(s, s1);
 	s = strcat(s, s2);
 
-	return (s1);
+	return (s);
 }
