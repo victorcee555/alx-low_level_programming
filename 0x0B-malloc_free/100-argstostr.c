@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * *argstostr - concatenates all argument in a program.
@@ -12,7 +13,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int len;
+	int len, i;
 	char *str;
 
 	if (ac == 0 || av == NULL)
