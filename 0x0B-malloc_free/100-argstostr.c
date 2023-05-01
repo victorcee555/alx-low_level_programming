@@ -19,7 +19,7 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 1; i <= ac; i++)
+	for (i = 0; i <= ac; i++)
 	{
 		len += strlen(av[i]);
 		len++;
@@ -29,8 +29,8 @@ char *argstostr(int ac, char **av)
 	if (str == NULL)
 		return (NULL);
 
-	strcpy(str, av[1]);
-	for (i = 2; i <= ac; i++)
+	strcpy(str, av[0]);
+	for (i = 1; i <= ac; i++)
 	{
 		strcat(str, "\n");
 		strcat(str, av[i]);
