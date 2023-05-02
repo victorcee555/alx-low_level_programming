@@ -13,30 +13,37 @@
 
 char *argstostr(int ac, char **av)
 {
-	int len, i;
+	int total_len, i;
 	char *str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	len = 0;
+	total_len = 0;
 
 	for (i = 0; i <= ac; i++)
 	{
-		len += strlen(av[i]);
-		len++;
+		total_len += strlen(av[i]);
+		total_len++;
 	}
 
 	str = malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (NULL);
 
-	strcpy(str, av[0]);
-	for (i = 1; i <= ac; i++)
+	int index, len;
+
+	index = 0;
+	len = 0;
+
+	for (i = 0; i < ac; i++)
 	{
-		strcat(str, "\n");
-		strcat(str, av[i]);
+		len = strlen(av[i]);
+		memcpy(str + index, av[i], len);
+		index += len;
+		str[index++] = '\n';
 	}
 
+	str[index] = '\n';
 	return (str);
 }
