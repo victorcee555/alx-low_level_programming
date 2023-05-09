@@ -32,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	check = read(fp, buffer, letters);
-	if(check == -1)
+	if (check == -1)
 		return (0);
 	count = write(STDOUT_FILENO, buffer, check);
 	if (count == -1 || check != count)
