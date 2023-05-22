@@ -16,10 +16,9 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned int numbits;
 	unsigned int hold_val;
-	unsigned int zero = 0;
 
-	if (n < zero || m < zero)
-		return (-1);
+	if (n == m)
+		return (0);
 
 	hold_val = n ^ m;
 	numbits = checkBits(hold_val);
