@@ -14,8 +14,14 @@ unsigned int checkBits(unsigned int n);
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int hold_val = n ^ m;
-	unsigned int numbits = checkBits(hold_val);
+	unsigned int numbits;
+	unsigned int hold_val;
+	
+	if (n < 0 || m < 0)
+		return (-1);
+
+	hold_val = n ^ m;
+	numbits = checkBits(hold_val);
 
 	return (numbits);
 }
