@@ -10,18 +10,17 @@
 
 void print_binary(unsigned long int n)
 {
-	int mask = 1;
-	int check = 0;
+	unsigned long int mask = 1UL << (sizeof(n) * 8- 1);
+	int check_zero = 1;
 	
-	while (n > 0)
+	for (i = 0; i < sizeof(n) * 8 - 1; i++)
 	{
-		check = n & mask;
-		if (check)
+		if (n & mask)
 			_putchar(1 + '0' );
-		if (!check)
+		else if (!check_zero)
 			_putchar(0 + '0');
-		check = 0;
-		n >>= 1;
+
+		mask >>= 1;
 	}
 
 }
