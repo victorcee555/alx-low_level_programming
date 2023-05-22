@@ -13,7 +13,7 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int res = 0;
+	int res = 0;
 
 	if ((n || index) < 0)
 		return (-1);
