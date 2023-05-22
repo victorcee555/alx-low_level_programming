@@ -19,7 +19,7 @@ void print_binary(unsigned long int n)
 		if (n & mask)
 		{
 			check_zero = 0;
-			_putchar(1 + '0' );
+			_putchar(1 + '0');
 		}
 
 		else if (!check_zero)
