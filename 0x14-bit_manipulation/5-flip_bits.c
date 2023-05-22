@@ -1,6 +1,5 @@
 #include "main.h"
 
-unsigned int checkBits(unsigned int n);
 
 /**
  * flip_bits - a function that returns the number of bits you would
@@ -14,38 +13,21 @@ unsigned int checkBits(unsigned int n);
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int numbits;
-	unsigned int hold_val;
+        unsigned int numbits;
+        unsigned int hold_val, count = 0;
 
-	if (n == m)
-		return (0);
+        if (n == m)
+                return (0);
 
-	hold_val = n ^ m;
-	numbits = checkBits(hold_val);
-
-	return (numbits);
-}
-
-/**
- * checkBits - a function that count number of bits needed to
- *             flip to get from one number to another.
- *
- * @n: the number to count bits
- *
- * Return: number of bits.
- */
-
-
-unsigned int checkBits(unsigned int n)
-{
-	unsigned int count = 0;
-
-	while (n != 0)
+        hold_val = n ^ m;
+        
+	while (hold_val > 0)
 	{
-		count += n & 1;
-
-		n >>= 1;
+		count += hold_val & 1;
+		hold_val >>= 1;
 	}
 
-	return (count);
+	numbits = count;
+
+        return (numbits);
 }
