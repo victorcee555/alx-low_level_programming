@@ -15,7 +15,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	int check, count;
 
-	if (m >= sizeof(n) * 8 || n >= sizeof(m) * 8)
+	if (m > sizeof(n) * 8 || n > sizeof(m) * 8)
 		return (0);
 
 	check = m ^ n;
