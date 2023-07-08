@@ -2,23 +2,23 @@
 #include <stdio.h>
 
 /**
- * set_bit - set the value of a bit to 1 at given index.
- * @n: pointer to the number to manipulate
- * @index: the index we want to set.
+ * set_bit - A function that sets the value of
+ *           a bit to 1 at given index.
  *
- * Return: 1 on success
- *         or -1 on error.
+ * @*n: a pointer to an int storing the bits.
+ * @index: the int storing the index value.
+ *
+ * Return: 1 if worked, or -1 if an error occured.
  */
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int numbits = sizeof(n) * 8;
-
-	if (index >= numbits)
+	/* check if index if greater than number of bits */
+	if (index >= sizeof(n) * 8)
 		return (-1);
 
-	*n = *n | (1 << index);
+	/* set bit to 1 and index */
+	*n |= 1 << index;
 
 	return (1);
-
 }
