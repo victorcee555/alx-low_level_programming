@@ -4,7 +4,7 @@
  * list_len - A function that returns the number
  *            of elements in a linked list_t list.
  *
- * h: a pointer that stores the address of the head node.
+ * @h: a pointer that stores the address of the head node.
  *
  * Return: number of elements in a linked list.
  */
