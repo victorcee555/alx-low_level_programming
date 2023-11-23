@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * size_t - A function.
+ * print_list - A function.
  * Description: A function that prints
  * all the elements of a list_t list.
  *
