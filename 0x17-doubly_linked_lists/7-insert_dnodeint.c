@@ -7,6 +7,7 @@
  * @h: a pointer to a pointer to the head node.
  * @idx: the index of the list where the new node should be added
  *       starting at 0.
+ * @n: The data for the new node
  *
  * Return: The new node.
  */
